@@ -26,6 +26,7 @@ public class GoblinsMod
 
         GoblinsBlocks.BLOCKS.register(eventBus);
         GoblinsBlocks.ITEMS.register(eventBus);
+        GoblinsEntities.ENTITY_TYPES.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
