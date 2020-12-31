@@ -129,7 +129,7 @@ public class HobgoblinModel<T extends HobgoblinEntity> extends BirsyBaseModel<T>
 
     @Override
     public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        
+
         float f = limbSwing;
         float f1 = limbSwingAmount;
 

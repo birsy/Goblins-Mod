@@ -57,10 +57,10 @@ public class HobgoblinEntity extends AbstractGoblinEntity {
     public static AttributeModifierMap.MutableAttribute setCustomAttributes()
     {
         return MobEntity.func_233666_p_()
-                .createMutableAttribute(Attributes.MAX_HEALTH, 12.0)
+                .createMutableAttribute(Attributes.MAX_HEALTH, 40.0)
                 .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25D)
                 .createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 0.75D)
-                .createMutableAttribute(Attributes.ATTACK_DAMAGE, 3.0D)
+                .createMutableAttribute(Attributes.ATTACK_DAMAGE, 6.0D)
                 .createMutableAttribute(Attributes.ATTACK_KNOCKBACK, 1.2D);
     }
 
