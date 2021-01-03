@@ -34,10 +34,8 @@ public class GoblinsEntities
 
 	public static void setup()
 	{
-		DeferredWorkQueue.runLater(() -> {
-			GlobalEntityTypeAttributes.put(GoblinsEntities.GOBLIN.get(), GoblinEntity.setCustomAttributes().create());
-			GlobalEntityTypeAttributes.put(GoblinsEntities.HOBGOBLIN.get(), HobgoblinEntity.setCustomAttributes().create());
-		});
+		GlobalEntityTypeAttributes.put(GoblinsEntities.GOBLIN.get(), GoblinEntity.setCustomAttributes().create());
+		GlobalEntityTypeAttributes.put(GoblinsEntities.HOBGOBLIN.get(), HobgoblinEntity.setCustomAttributes().create());
 	}
 
 	public static void clientSetup() {
