@@ -1,9 +1,7 @@
 package birsy.goblinsmod.client.render.entity;
 
-import birsy.goblinsmod.client.render.model.entity.GoblinModel;
-import birsy.goblinsmod.client.render.model.entity.HobgoblinModel;
+import birsy.goblinsmod.client.render.entity.model.GoblinModel;
 import birsy.goblinsmod.common.entity.GoblinEntity;
-import birsy.goblinsmod.common.entity.HobgoblinEntity;
 import birsy.goblinsmod.core.GoblinsMod;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;

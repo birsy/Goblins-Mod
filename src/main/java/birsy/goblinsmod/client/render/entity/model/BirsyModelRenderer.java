@@ -1,4 +1,4 @@
-package birsy.goblinsmod.client.render.model;
+package birsy.goblinsmod.client.render.entity.model;
 
 import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.model.ModelRenderer;

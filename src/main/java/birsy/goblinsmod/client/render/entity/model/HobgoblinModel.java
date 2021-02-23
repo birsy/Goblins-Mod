@@ -1,7 +1,7 @@
-package birsy.goblinsmod.client.render.model.entity;
+package birsy.goblinsmod.client.render.entity.model;
 
-import birsy.goblinsmod.client.render.model.BirsyBaseModel;
-import birsy.goblinsmod.client.render.model.BirsyModelRenderer;
+import birsy.goblinsmod.client.render.entity.model.BirsyBaseModel;
+import birsy.goblinsmod.client.render.entity.model.BirsyModelRenderer;
 import birsy.goblinsmod.common.entity.HobgoblinEntity;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;

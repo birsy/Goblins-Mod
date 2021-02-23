@@ -1,4 +1,4 @@
-package birsy.goblinsmod.client.render.model;
+package birsy.goblinsmod.client.render.entity.model;
 
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.entity.Entity;
@@ -218,7 +218,7 @@ public abstract class BirsyBaseModel<T extends Entity> extends EntityModel<T>
         modelRenderer.defaultRotateAngleZ = z;
     }
     
-    private float calculateRotation(float speed, float degree, boolean invert, float offset, float weight, float f, float f1) {
+    public float calculateRotation(float speed, float degree, boolean invert, float offset, float weight, float f, float f1) {
         float rotation = (MathHelper.cos(f * (speed) + offset) * (degree) * f1) + (weight * f1);
         return invert ? -rotation : rotation;
     }
