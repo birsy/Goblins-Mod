@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "goblins_mod:block/grimstone/grimstone_pillar" },
+        "axis=z":   { "model": "goblins_mod:block/grimstone/grimstone_pillar", "x": 90 },
+        "axis=x":   { "model": "goblins_mod:block/grimstone/grimstone_pillar", "x": 90, "y": 90 }
+    }
+}

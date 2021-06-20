@@ -21,5 +21,4 @@ public class GoblinRenderer extends MobRenderer<GoblinEntity, GoblinModel<Goblin
 	public ResourceLocation getEntityTexture(GoblinEntity entity) {
 		return TEXTURE;
 	}
-
 }

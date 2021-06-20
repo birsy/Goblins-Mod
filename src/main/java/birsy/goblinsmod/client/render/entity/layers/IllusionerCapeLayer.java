@@ -25,6 +25,8 @@ public class IllusionerCapeLayer<T extends IllusionerEntity, M extends IllagerMo
    public double chasingPosY;
    public double chasingPosZ;
 
+   private float prevAgeInTicks;
+
    private static final IllusionerCapeModel capeModel = new IllusionerCapeModel();
    private static final ResourceLocation TEXTURE = new ResourceLocation("minecraft", "textures/entity/illager/illusioner_cape.png");
 
@@ -33,7 +35,10 @@ public class IllusionerCapeLayer<T extends IllusionerEntity, M extends IllagerMo
    }
 
    public void render(MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn, T entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-      updateCape(entitylivingbaseIn);
+      if (this.prevAgeInTicks != ageInTicks) {
+         updateCape(entitylivingbaseIn);
+         this.prevAgeInTicks = ageInTicks;
+      }
       
       matrixStackIn.push();
       matrixStackIn.translate(0.0D, 0.0D, 0.125D);
@@ -64,6 +69,8 @@ public class IllusionerCapeLayer<T extends IllusionerEntity, M extends IllagerMo
       IVertexBuilder ivertexbuilder = bufferIn.getBuffer(RenderType.getEntitySolid(TEXTURE));
       capeModel.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       matrixStackIn.pop();
+
+      this.prevAgeInTicks = ageInTicks;
    }
 
    private void updateCape(T entityIn) {

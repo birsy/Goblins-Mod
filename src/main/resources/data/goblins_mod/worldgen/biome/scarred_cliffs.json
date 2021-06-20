@@ -1,5 +1,5 @@
 {
-  "scale": 0.05,
+  "scale": 0.2,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -14,7 +14,7 @@
     "water_color": 4159204,
     "water_fog_color": 329011
   },
-  "surface_builder": "minecraft:gravelly_mountain",
+  "surface_builder": "goblins_mod:scarred_cliffs_builder",
   "carvers": {
     "air": [
       "minecraft:cave",
@@ -184,5 +184,5 @@
   "temperature": 0.2,
   "downfall": 0.3,
   "category": "none",
-  "depth": 1.3
+  "depth": 1.1
 }

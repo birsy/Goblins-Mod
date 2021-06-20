@@ -28,7 +28,7 @@ public class CragrockFeature extends Feature<ColumnConfig> {
       if (!func_242762_a(reader, i, pos.toMutable())) {
          return false;
       } else {
-         int j = config.func_242795_b().func_242259_a(rand);
+         int j = config.getHeight().getSpread(rand);
          boolean flag = rand.nextFloat() < 0.9F;
          int k = Math.min(j, flag ? 5 : 8);
          int l = flag ? 50 : 15;
@@ -37,7 +37,7 @@ public class CragrockFeature extends Feature<ColumnConfig> {
          for(BlockPos blockpos : BlockPos.getRandomPositions(rand, l, pos.getX() - k, pos.getY(), pos.getZ() - k, pos.getX() + k, pos.getY(), pos.getZ() + k)) {
             int i1 = j - blockpos.manhattanDistance(pos);
             if (i1 >= 0) {
-               flag1 |= this.func_236248_a_(reader, i, blockpos, i1, config.func_242794_am_().func_242259_a(rand), rand);
+               flag1 |= this.func_236248_a_(reader, i, blockpos, i1, config.getReach().getSpread(rand), rand);
             }
          }
 
@@ -68,7 +68,7 @@ public class CragrockFeature extends Feature<ColumnConfig> {
                   blockpos$mutable.move(Direction.UP);
                   flag = true;
                } else {
-                  if (!reader.getBlockState(blockpos$mutable).isIn(Blocks.BASALT)) {
+                  if (!reader.getBlockState(blockpos$mutable).matchesBlock(Blocks.BASALT)) {
                      break;
                   }
 
@@ -126,6 +126,6 @@ public class CragrockFeature extends Feature<ColumnConfig> {
 
    private static boolean isValidPosition(IWorld world, int seaLevelIn_, BlockPos blockPos) {
       BlockState blockstate = world.getBlockState(blockPos);
-      return blockstate.isAir() || blockstate.isIn(Blocks.WATER) && blockPos.getY() <= seaLevelIn_;
+      return blockstate.isAir() || blockstate.matchesBlock(Blocks.WATER) && blockPos.getY() <= seaLevelIn_;
    }
 }

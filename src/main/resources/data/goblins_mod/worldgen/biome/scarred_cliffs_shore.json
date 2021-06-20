@@ -1,5 +1,5 @@
 {
-  "scale": 0.8,
+  "scale": 0.3,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -14,7 +14,7 @@
     "water_color": 4159204,
     "water_fog_color": 329011
   },
-  "surface_builder": "minecraft:stone",
+  "surface_builder": "goblins_mod:scarred_cliffs_builder",
   "carvers": {
     "air": [
       "minecraft:cave",
@@ -35,10 +35,7 @@
       "minecraft:monster_room"
     ],
     [
-      "goblins_mod:beach_delta",
-      "goblins_mod:grass_floor",
-      "goblins_mod:large_cragrock",
-      "goblins_mod:small_cragrock"
+
     ],
     [],
     [

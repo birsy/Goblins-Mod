@@ -1,7 +1,8 @@
-package birsy.goblinsmod.client.render.entity.model;
+package birsy.goblinsmod.client.render.util;
 
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.api.distmarker.Dist;
@@ -100,8 +101,46 @@ public abstract class BirsyBaseModel<T extends Entity> extends EntityModel<T>
 		box.rotateAngleY =+ (netHeadYaw * ((float)Math.PI / 180F))/yawDivisor;
 		box.rotateAngleX =+ (headPitch * ((float)Math.PI / 180F))/pitchDivisor;
 	}
-	
-	
+
+	/**
+	 * Rotates the given boxes to face a target.
+	 *
+	 * @param box             the box to face the target
+	 * @param netHeadYaw      the yaw of the target
+	 * @param headPitch       the pitch of the target
+	 * @param yawDivisor      the amount to divide the yaw by. good to make it the amount of parts.
+	 * @param pitchDivisor    the amount to divide the pitch by. good to make it the amount of parts.
+	 * @param direction       the side of the modelRenderer you want to point at the target.
+	 */
+	public void look(BirsyModelRenderer box, float netHeadYaw, float headPitch, float yawDivisor, float pitchDivisor, Direction direction) {
+		switch (direction) {
+			case NORTH:
+				box.rotateAngleY =+ (netHeadYaw * ((float)Math.PI / 180F))/yawDivisor;
+				box.rotateAngleX =+ (headPitch * ((float)Math.PI / 180F))/pitchDivisor;
+				break;
+			case SOUTH:
+				box.rotateAngleY =- (netHeadYaw * ((float)Math.PI / 180F))/yawDivisor;
+				box.rotateAngleX =- (headPitch * ((float)Math.PI / 180F))/pitchDivisor;
+				break;
+			case EAST:
+				box.rotateAngleX =+ (netHeadYaw * ((float)Math.PI / 180F))/yawDivisor;
+				box.rotateAngleY =+ (headPitch * ((float)Math.PI / 180F))/pitchDivisor;
+				break;
+			case WEST:
+				box.rotateAngleX =- (netHeadYaw * ((float)Math.PI / 180F))/yawDivisor;
+				box.rotateAngleY =- (headPitch * ((float)Math.PI / 180F))/pitchDivisor;
+				break;
+			case UP:
+				box.rotateAngleZ =- (netHeadYaw * ((float)Math.PI / 180F))/yawDivisor;
+				box.rotateAngleY =- (headPitch * ((float)Math.PI / 180F))/pitchDivisor;
+				break;
+			case DOWN:
+				box.rotateAngleZ =+ (netHeadYaw * ((float)Math.PI / 180F))/yawDivisor;
+				box.rotateAngleY =+ (headPitch * ((float)Math.PI / 180F))/pitchDivisor;
+				break;
+		}
+	}
+
 	/**
      * Swings boxes. Good for walk cycles or wind effects.
      *

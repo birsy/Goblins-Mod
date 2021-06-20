@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "goblins_mod:block/nether_brick_tiles" }
+    }
+}

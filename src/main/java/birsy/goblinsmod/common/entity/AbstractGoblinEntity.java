@@ -21,7 +21,7 @@ public abstract class AbstractGoblinEntity extends MonsterEntity {
 
     @Override
     public void livingTick() {
-        if (this.jukeboxPosition == null || !this.jukeboxPosition.withinDistance(this.getPositionVec(), 3.46D) || !this.world.getBlockState(this.jukeboxPosition).isIn(Blocks.JUKEBOX)) {
+        if (this.jukeboxPosition == null || !this.jukeboxPosition.withinDistance(this.getPositionVec(), 3.46D) || !this.world.getBlockState(this.jukeboxPosition).matchesBlock(Blocks.JUKEBOX)) {
             this.partying = false;
             this.jukeboxPosition = null;
         }

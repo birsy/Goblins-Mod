@@ -1,7 +1,7 @@
 package birsy.goblinsmod.client.render.entity.model;
 
-import birsy.goblinsmod.client.render.entity.model.BirsyBaseModel;
-import birsy.goblinsmod.client.render.entity.model.BirsyModelRenderer;
+import birsy.goblinsmod.client.render.util.BirsyBaseModel;
+import birsy.goblinsmod.client.render.util.BirsyModelRenderer;
 import birsy.goblinsmod.common.entity.GoblinEntity;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -9,6 +9,7 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.IHasArm;
 import net.minecraft.client.renderer.entity.model.IHasHead;
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.HandSide;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -18,7 +19,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  * Created using Tabula 8.0.0
  */
 @OnlyIn(Dist.CLIENT)
-public class GoblinModel<T extends GoblinEntity> extends BirsyBaseModel<T> implements IHasHead, IHasArm {
+public class GoblinModel<T extends LivingEntity> extends BirsyBaseModel<T> implements IHasHead, IHasArm {
     public BirsyModelRenderer goblinWaist;
     public BirsyModelRenderer goblinLeftArm;
     public BirsyModelRenderer goblinRightArm;

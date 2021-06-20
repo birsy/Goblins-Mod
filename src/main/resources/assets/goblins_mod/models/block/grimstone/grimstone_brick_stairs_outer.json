@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "goblins_mod:block/grimstone/grimstone_bricks",
+    "top": "goblins_mod:block/grimstone/grimstone_bricks",
+    "side": "goblins_mod:block/grimstone/grimstone_bricks"
+  }
+}

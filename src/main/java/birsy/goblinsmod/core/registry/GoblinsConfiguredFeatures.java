@@ -17,12 +17,12 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class GoblinsConfiguredFeatures {
-    public static final ConfiguredFeature<?, ?> COBBLESTONE_VEIN = Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, Blocks.COBBLESTONE.getDefaultState(), 40)).range(256).square().func_242731_b(10);
-    public static final ConfiguredFeature<?, ?> GRASS_FLOOR = Feature.DELTA_FEATURE.withConfiguration(new BasaltDeltasFeature(Blocks.GRASS_BLOCK.getDefaultState(), Blocks.COARSE_DIRT.getDefaultState(), FeatureSpread.func_242253_a(3, 4), FeatureSpread.func_242253_a(1, 2))).withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(40)));
-    public static final ConfiguredFeature<?, ?> SMALL_CRAGROCK = GoblinsFeatures.CRAGROCK.get().withConfiguration(new ColumnConfig(FeatureSpread.func_242252_a(1), FeatureSpread.func_242253_a(1, 3))).withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(1)));
-    public static final ConfiguredFeature<?, ?> LARGE_CRAGROCK = GoblinsFeatures.CRAGROCK.get().withConfiguration(new ColumnConfig(FeatureSpread.func_242253_a(2, 1), FeatureSpread.func_242253_a(5, 5))).withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(1)));
-    public static final ConfiguredFeature<?, ?> BEACH_DELTA = Feature.DELTA_FEATURE.withConfiguration(new BasaltDeltasFeature(Blocks.WATER.getDefaultState(), Blocks.GRAVEL.getDefaultState(), FeatureSpread.func_242253_a(3, 4), FeatureSpread.func_242253_a(1, 2))).withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(40)));
-    public static final ConfiguredFeature<?, ?> BOULDER = Feature.FOREST_ROCK.withConfiguration(new BlockStateFeatureConfig(Blocks.COBBLESTONE.getDefaultState())).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).func_242732_c(5);
+    public static final ConfiguredFeature<?, ?> COBBLESTONE_VEIN = Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, Blocks.COBBLESTONE.getDefaultState(), 40)).range(256).square().count(10);
+    public static final ConfiguredFeature<?, ?> GRASS_FLOOR = Feature.DELTA_FEATURE.withConfiguration(new BasaltDeltasFeature(Blocks.GRASS_BLOCK.getDefaultState(), Blocks.COARSE_DIRT.getDefaultState(), FeatureSpread.create(3, 4), FeatureSpread.create(1, 2))).withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(40)));
+    public static final ConfiguredFeature<?, ?> SMALL_CRAGROCK = GoblinsFeatures.CRAGROCK.get().withConfiguration(new ColumnConfig(FeatureSpread.create(1), FeatureSpread.create(1, 3))).withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(1)));
+    public static final ConfiguredFeature<?, ?> LARGE_CRAGROCK = GoblinsFeatures.CRAGROCK.get().withConfiguration(new ColumnConfig(FeatureSpread.create(2, 1), FeatureSpread.create(5, 5))).withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(1)));
+    public static final ConfiguredFeature<?, ?> BEACH_DELTA = Feature.DELTA_FEATURE.withConfiguration(new BasaltDeltasFeature(Blocks.WATER.getDefaultState(), Blocks.GRAVEL.getDefaultState(), FeatureSpread.create(3, 4), FeatureSpread.create(1, 2))).withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(40)));
+    public static final ConfiguredFeature<?, ?> BOULDER = Feature.FOREST_ROCK.withConfiguration(new BlockStateFeatureConfig(Blocks.COBBLESTONE.getDefaultState())).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).count(5);
 
     public static void registerConfiguredFeatures() {
         Registry<ConfiguredFeature<?, ?>> registry = WorldGenRegistries.CONFIGURED_FEATURE;

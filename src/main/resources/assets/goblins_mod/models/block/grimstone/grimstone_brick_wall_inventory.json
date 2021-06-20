@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "goblins_mod:block/grimstone/grimstone_bricks"
+  }
+}

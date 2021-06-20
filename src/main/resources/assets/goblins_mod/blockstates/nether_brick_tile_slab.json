@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "goblins_mod:block/nether_brick_tile_slab"
+    },
+    "type=double": {
+      "model": "goblins_mod:block/nether_brick_tiles"
+    },
+    "type=top": {
+      "model": "goblins_mod:block/nether_brick_tile_slab_top"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "goblins_mod:block/grimstone/grimstone_pillar_top",
+    "side": "goblins_mod:block/grimstone/grimstone_pillar"
+  }
+}

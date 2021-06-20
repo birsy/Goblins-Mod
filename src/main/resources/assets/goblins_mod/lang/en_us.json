@@ -1,0 +1,10 @@
+{
+	"entity.goblins_mod.cobunto": "Cobunto",
+	"entity.goblins_mod.sanctumite": "Sanctumite",
+	"entity.goblins_mod.goblin": "Goblin",
+	"entity.goblins_mod.hobgoblin": "Hobgoblin",
+	"entity.goblins_mod.corrupted_king": "Corrupted King",
+
+	"item.goblins_mod.corrupted_crown": "Corrupted Crown",
+	"item.crown.ability": "Grants incredible power, but great at a cost..."
+}

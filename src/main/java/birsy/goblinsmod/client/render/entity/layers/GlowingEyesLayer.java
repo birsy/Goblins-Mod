@@ -32,7 +32,7 @@ public class GlowingEyesLayer<T extends Entity, M extends EntityModel<T>> extend
 
   	@Override
   	public void render(MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn, T entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-		IVertexBuilder ivertexbuilder = bufferIn.getBuffer(RenderType.getEntityTranslucent(eyeTexture));
+		IVertexBuilder ivertexbuilder = bufferIn.getBuffer(renderType);
   		float fade = (0.5F * MathHelper.sin(entitylivingbaseIn.ticksExisted)) + 0.5F;
   		this.getEntityModel().render(matrixStackIn, ivertexbuilder, 15728640, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
   	}

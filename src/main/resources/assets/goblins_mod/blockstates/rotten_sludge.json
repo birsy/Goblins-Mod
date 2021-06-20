@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "goblins_mod:block/rotten_sludge" },
+            { "model": "goblins_mod:block/rotten_sludge_mirrored" },
+            { "model": "goblins_mod:block/rotten_sludge", "y": 180 },
+            { "model": "goblins_mod:block/rotten_sludge_mirrored", "y": 180 }
+        ]
+    }
+}

@@ -1,0 +1,93 @@
+{
+"ambientocclusion": false,
+    "textures": {
+        "rotten_sludge": "goblins_mod:block/rotten_sludge",
+        "rotten_sludge_side": "goblins_mod:block/rotten_ooze"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "from": [ 0, 0, 0 ], 
+            "to": [ 16, 4, 16 ], 
+            "faces": {
+                "north": { "texture": "#rotten_sludge_side", "uv": [ 0, 0, 16, 4 ], "cullface": "north" },
+                "east": { "texture": "#rotten_sludge_side", "uv": [ 0, 0, 16, 4 ], "cullface": "east" },
+                "south": { "texture": "#rotten_sludge_side", "uv": [ 0, 0, 16, 4 ], "cullface": "south" },
+                "west": { "texture": "#rotten_sludge_side", "uv": [ 0, 0, 16, 4 ], "cullface": "west" },
+                "up": { "texture": "#rotten_sludge", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#rotten_sludge", "uv": [ 0, 0, 16, 16 ], "cullface": "down" }
+            }
+        },
+        {
+            "from": [ 0, -5, 0 ], 
+            "to": [ 16, 2, 0 ], 
+            "rotation": { "origin": [ 8, 2, 0 ], "axis": "x", "angle": 22.5 },
+            "faces": {
+                "north": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 16, 11 ], "cullface": "north" },
+                "east": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 0, 11 ] },
+                "south": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 16, 11 ] },
+                "west": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 0, 11 ] }
+            }
+        },
+        {
+            "from": [ 0, -5, 0 ], 
+            "to": [ 0, 2, 16 ], 
+            "rotation": { "origin": [ 0, 2, 8 ], "axis": "z", "angle": -22.5 },
+            "faces": {
+                "east": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 16, 11 ] },
+                "west": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 16, 11 ], "cullface": "west" }
+            }
+        },
+        {
+            "from": [ 16, -5, 0 ], 
+            "to": [ 16, 2, 16 ], 
+            "rotation": { "origin": [ 16, 2, 8 ], "axis": "z", "angle": 22.5 },
+            "faces": {
+                "east": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 16, 11 ], "cullface": "east" },
+                "west": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 16, 11 ] }
+            }
+        },
+        {
+            "from": [ 0, -5, 16 ], 
+            "to": [ 16, 2, 16 ], 
+            "rotation": { "origin": [ 8, 2, 16 ], "axis": "x", "angle": -22.5 },
+            "faces": {
+                "north": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 16, 11 ] },
+                "east": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 0, 11 ] },
+                "south": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 16, 11 ], "cullface": "south" },
+                "west": { "texture": "#rotten_sludge_side", "uv": [ 0, 4, 0, 11 ] }
+            }
+        }
+    ]
+}

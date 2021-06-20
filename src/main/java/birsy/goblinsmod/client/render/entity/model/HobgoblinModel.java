@@ -1,7 +1,7 @@
 package birsy.goblinsmod.client.render.entity.model;
 
-import birsy.goblinsmod.client.render.entity.model.BirsyBaseModel;
-import birsy.goblinsmod.client.render.entity.model.BirsyModelRenderer;
+import birsy.goblinsmod.client.render.util.BirsyBaseModel;
+import birsy.goblinsmod.client.render.util.BirsyModelRenderer;
 import birsy.goblinsmod.common.entity.HobgoblinEntity;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -30,6 +30,9 @@ public class HobgoblinModel<T extends HobgoblinEntity> extends BirsyBaseModel<T>
     public BirsyModelRenderer hobgoblinRightFist;
     public BirsyModelRenderer hobgoblinLowerLeftArm;
     public BirsyModelRenderer hobgoblinLeftFist;
+
+    private float rightArmRotation;
+    private float leftArmRotation;
 
     public HobgoblinModel() {
         this.textureWidth = 128;
@@ -121,10 +124,28 @@ public class HobgoblinModel<T extends HobgoblinEntity> extends BirsyBaseModel<T>
     }
 
     @Override
-    public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) { 
-        ImmutableList.of(this.hobgoblinBody).forEach((modelRenderer) -> { 
-            modelRenderer.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
-        });
+    public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
+        float oUpperLeftArmRotX = this.hobgoblinUpperLeftArm.rotateAngleX;
+        float oUpperRightArmRotX = this.hobgoblinUpperRightArm.rotateAngleX;
+        float oUpperLeftArmRotZ = this.hobgoblinUpperLeftArm.rotateAngleZ;
+        float oUpperRightArmRotZ = this.hobgoblinUpperRightArm.rotateAngleZ;
+
+        this.hobgoblinUpperLeftArm.rotateAngleX =+ this.leftArmRotation;
+        this.hobgoblinUpperRightArm.rotateAngleX =+ this.rightArmRotation;
+        this.hobgoblinUpperLeftArm.rotateAngleZ =+ this.leftArmRotation / -5;
+        this.hobgoblinUpperRightArm.rotateAngleZ =+ this.rightArmRotation / 5;
+
+        ImmutableList.of(this.hobgoblinBody).forEach((modelRenderer) -> modelRenderer.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha));
+
+        this.hobgoblinUpperLeftArm.rotateAngleX = oUpperLeftArmRotX;
+        this.hobgoblinUpperRightArm.rotateAngleX = oUpperRightArmRotX;
+        this.hobgoblinUpperLeftArm.rotateAngleZ = oUpperLeftArmRotZ;
+        this.hobgoblinUpperRightArm.rotateAngleZ = oUpperRightArmRotZ;
+    }
+
+    public void setArmRotation(float leftArmRotation, float rightArmRotation) {
+        this.leftArmRotation = leftArmRotation;
+        this.rightArmRotation = rightArmRotation;
     }
 
     @Override
@@ -138,10 +159,6 @@ public class HobgoblinModel<T extends HobgoblinEntity> extends BirsyBaseModel<T>
         float globalDegree = 1.0F;
 
         float walkSpeed = 0.75f * globalSpeed;
-
-        if (entityIn.attackTick > 0) {
-            swing(this.hobgoblinUpperRightArm, 2.0F, 0.1f * globalDegree, false, 0.2F, 0.3F, ageInTicks / 3.1831f, 0.5f, Axis.X);
-        }
 
         resetParts(this.hobgoblinBody, this.hobgoblinHead, this.hobgoblinUpperRightArm, this.hobgoblinUpperLeftArm, this.hobgoblinRightLeg, this.hobgoblinLeftLeg, this.hobgoblinJaw, this.hobgoblinRightEar, this.hobgoblinLeftEar, this.hobgoblinTopNose, this.hobgoblinForehead, this.hobgoblinSideburns, this.hobgoblinBeard, this.hobgoblinBottomNose, this.hobgoblinLowerRightArm, this.hobgoblinRightFist, this.hobgoblinLowerLeftArm, this.hobgoblinLeftFist);
 
@@ -172,10 +189,6 @@ public class HobgoblinModel<T extends HobgoblinEntity> extends BirsyBaseModel<T>
 
         swing(this.hobgoblinJaw, walkSpeed, 0.5f * globalDegree, false, 0.0F, 0.3F, f, f1, Axis.X);
 
-        if (entityIn.attackTick > 0) {
-            swing(this.hobgoblinUpperRightArm, 2.0F, 0.1f * globalDegree, false, 0.2F, 0.3F, ageInTicks / 3.1831f, 0.5f, Axis.X);
-        }
-
         //IDLE
         bob(this.hobgoblinHead, 0.25F * globalSpeed, 2 * globalHeight, false, ageInTicks, 0.5F, true);
 
@@ -198,21 +211,7 @@ public class HobgoblinModel<T extends HobgoblinEntity> extends BirsyBaseModel<T>
 
         bob(this.hobgoblinBody, 0.12F * globalSpeed, 0.5f * globalHeight, false, ageInTicks, 0.5F, true);
 
-        if (entityIn.attackTick > 0) {
-            swing(this.hobgoblinUpperRightArm, 2.0F, 0.1f * globalDegree, false, 0.2F, 0.3F, ageInTicks / 3.1831f, 0.5f, Axis.X);
-        }
-
         look(this.hobgoblinBody, netHeadYaw, headPitch, 10.0F, 3.0F);
         look(this.hobgoblinHead, netHeadYaw, headPitch, 1.0F, 1.0F);
-    }
-
-    public void setLivingAnimations(T entityIn, float limbSwing, float limbSwingAmount, float partialTick) {
-        super.setLivingAnimations(entityIn, limbSwing, limbSwingAmount, partialTick);
-
-        int i = entityIn.getAttackTick();
-        if (i > 0) {
-            this.hobgoblinUpperRightArm.rotateAngleX =+ -2.0F + 1.5F * MathHelper.func_233021_e_((float) i, 10.0F);
-            this.hobgoblinUpperLeftArm.rotateAngleX =+ -2.0F + 1.5F * MathHelper.func_233021_e_((float) i, 10.0F);
-        }
     }
 }

@@ -1,11 +1,11 @@
 package birsy.goblinsmod.client.render.entity.model;
 
+import birsy.goblinsmod.client.render.util.BirsyBaseModel;
+import birsy.goblinsmod.client.render.util.BirsyModelRenderer;
 import birsy.goblinsmod.common.entity.CobuntoEntity;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 

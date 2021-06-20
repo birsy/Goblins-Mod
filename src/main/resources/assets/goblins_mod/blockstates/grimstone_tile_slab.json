@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "goblins_mod:block/grimstone/grimstone_tile_slab"
+    },
+    "type=double": {
+      "model": "goblins_mod:block/grimstone/grimstone_tiles"
+    },
+    "type=top": {
+      "model": "goblins_mod:block/grimstone/grimstone_tile_slab_top"
+    }
+  }
+}

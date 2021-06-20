@@ -1,7 +1,7 @@
 package birsy.goblinsmod.client.render.entity.model;
 
-import birsy.goblinsmod.client.render.entity.model.BirsyBaseModel;
-import birsy.goblinsmod.client.render.entity.model.BirsyModelRenderer;
+import birsy.goblinsmod.client.render.util.BirsyBaseModel;
+import birsy.goblinsmod.client.render.util.BirsyModelRenderer;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;

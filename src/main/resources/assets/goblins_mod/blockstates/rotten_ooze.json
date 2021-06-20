@@ -1,0 +1,30 @@
+{
+    "variants": {
+        "facing=down": {
+            "model": "goblins_mod:block/rotten_ooze",
+            "x": 180
+        },
+        "facing=east": {
+            "model": "goblins_mod:block/rotten_ooze",
+            "x": 90,
+            "y": 90
+        },
+        "facing=north": {
+            "model": "goblins_mod:block/rotten_ooze",
+            "x": 90
+        },
+        "facing=south": {
+            "model": "goblins_mod:block/rotten_ooze",
+            "x": 90,
+            "y": 180
+        },
+        "facing=up": {
+            "model": "goblins_mod:block/rotten_ooze"
+        },
+        "facing=west": {
+            "model": "goblins_mod:block/rotten_ooze",
+            "x": 90,
+            "y": 270
+        }
+    }
+}
